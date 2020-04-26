@@ -9,11 +9,13 @@ jobs:
     steps:
     - name: Checkout
       uses: actions/checkout@master
-
-    - name: Vuepress to GitHub Pages
-      uses: testthedocs/github-pages-deploy-action@0.0.2
+      
+    - name: Build and Deploy
+      uses: grasilife/github-pages-deploy-action@master
       env:
         ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
-        BRANCH: gh-pages
-        FOLDER: build
-        BUILD_SCRIPT: npm install && npm run build
+        BASE_BRANCH: master # The branch the action should deploy from.
+        BRANCH: gh-pages # The branch the action should deploy to.
+        FOLDER: build # The folder the action should deploy.
+        BUILD_SCRIPT: npm install && npm build # The build sc
+    
