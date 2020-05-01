@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 axios.defaults.timeout = 5000;
-axios.defaults.baseURL ='localhost:6733/timeriver'; //填写域名
+axios.defaults.baseURL ='http://localhost:6733/timeriver'; //填写域名
 
 //http request 拦截器
 axios.interceptors.request.use(
